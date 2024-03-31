@@ -1,41 +1,41 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
 import SocialList from "@/components/SocialList.astro";
+import { getAllPosts, sortMDByDate } from "@/data/post";
+import PostPreview from "@/components/blog/PostPreview.astro";
+
+const MAX_POSTS = 5;
+const allPosts = await getAllPosts();
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section class="grid gap-3">
-		<h1 class="title mb-6">Hello World!</h1>
+		<h1 class="title mb-6">Welcome to my blog!</h1>
 		<p class="mb-4 text-base">
-			I'm a web developer and <strong>software engineer</strong> passionate about creating <strong
-				>innovative</strong
-			>
-			and <strong>robust</strong> solutions. For the past few years, I've been working as a fullstack
-			developer, although I've always found my true passion in the <strong>backend</strong>.
+			Here, I'll be sharing my experience and knowledge about software development, with a special
+			focus on hexagonal architecture, Domain-Driven Design (DDD), and software testing.
 		</p>
 
 		<p class="mb-4 text-base">
-			As a developer, my main focus is to make sure that every <strong>line of code</strong> I write
-			meets the <strong>highest quality standards</strong>. For me, this means code that is
-			<strong>testable</strong>, <strong>maintainable</strong> and <strong>scalable</strong>.
+			Thank you for visiting, and I hope you find the content interesting and useful!
 		</p>
-		<p class="mb-4 text-base">
-			During my career, I have spent time and effort studying and applying concepts such as
-			<strong>hexagonal architecture</strong> and <strong>Domain-Driven Design (DDD)</strong>. These
-			methodologies have not only contributed to strengthening my software development skills, but
-			have also improved my ability to <strong>communicate</strong> and
-			<strong>collaborate</strong> effectively with multidisciplinary teams.
-		</p>
-		<p class="mb-4 text-base">
-			I'm excited to share with you some of the projects I've worked on and the <strong
-				>technologies</strong
-			> I've mastered along the way.
-		</p>
-		<p class="mb-4 text-base">
-			Thanks for visiting my portfolio and I hope to have the <strong
-				>opportunity to collaborate together soon!</strong
-			>
-		</p>
+		<div class="flex items-center gap-3">
+			<p class="text-base">Find me on:</p>
+			<SocialList />
+		</div>
 	</section>
-	<SocialList />
+
+	<section aria-label="Blog post list" class="mt-16">
+		<h2 class="title mb-4 text-xl">Posts</h2>
+		<ul class="space-y-4">
+			{
+				allPostsByDate.map((p) => (
+					<li class="flex flex-col gap-x-2 sm:flex-row">
+						<PostPreview post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </PageLayout>
