@@ -9,53 +9,63 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 import icon from "astro-icon";
 import expressiveCode from "astro-expressive-code";
 import { expressiveCodeOptions } from "./src/site.config";
-import netlify from "@astrojs/netlify";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://lopez10.github.io",
-  base: "/",
-  output: "static",
-  markdown: {
-    remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
-    rehypePlugins: [[rehypeExternalLinks, {
-      target: "_blank",
-      rel: ["nofollow, noopener, noreferrer"]
-    }]],
-    remarkRehype: {
-      footnoteLabelProperties: {
-        className: [""]
-      }
-    }
-  },
-  integrations: [expressiveCode(expressiveCodeOptions), icon(), tailwind({
-    applyBaseStyles: false
-  }), sitemap(), mdx()],
-  image: {
-    domains: ["webmention.io"]
-  },
-  prefetch: true,
-  vite: {
-    plugins: [rawFonts([".ttf", ".woff"])],
-    optimizeDeps: {
-      exclude: ["@resvg/resvg-js"]
-    }
-  },
-  adapter: netlify()
+	site: "https://lopez10.github.io",
+	base: "/",
+	
+	output: "static",
+	markdown: {
+		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+		rehypePlugins: [
+			[
+				rehypeExternalLinks,
+				{
+					target: "_blank",
+					rel: ["nofollow, noopener, noreferrer"],
+				},
+			],
+		],
+		remarkRehype: {
+			footnoteLabelProperties: {
+				className: [""],
+			},
+		},
+	},
+	integrations: [
+		expressiveCode(expressiveCodeOptions),
+		icon(),
+		tailwind({
+			applyBaseStyles: false,
+		}),
+		sitemap(),
+		mdx(),
+	],
+	image: {
+		domains: ["webmention.io"],
+	},
+	prefetch: true,
+	vite: {
+		plugins: [rawFonts([".ttf", ".woff"])],
+		optimizeDeps: {
+			exclude: ["@resvg/resvg-js"],
+		},
+	},
 });
+
 function rawFonts(ext: Array<string>) {
-  return {
-    name: "vite-plugin-raw-fonts",
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore:next-line
-    transform(_, id) {
-      if (ext.some(e => id.endsWith(e))) {
-        const buffer = fs.readFileSync(id);
-        return {
-          code: `export default ${JSON.stringify(buffer)}`,
-          map: null
-        };
-      }
-    }
-  };
+	return {
+		name: "vite-plugin-raw-fonts",
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore:next-line
+		transform(_, id) {
+			if (ext.some((e) => id.endsWith(e))) {
+				const buffer = fs.readFileSync(id);
+				return {
+					code: `export default ${JSON.stringify(buffer)}`,
+					map: null,
+				};
+			}
+		},
+	};
 }
