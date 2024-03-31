@@ -12,6 +12,7 @@ import { expressiveCodeOptions } from "./src/site.config";
 
 export default defineConfig({
 	site: "https://lopez10.github.io",
+	base: "/",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
