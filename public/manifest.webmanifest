@@ -1,15 +1,15 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": "Juan Lopez Berges",
+	"short_name": "JLB",
+	"description": "Juan Lopez Berges personal website",
 	"icons": [
 		{
-			"src": "/192x192.png",
+			"src": "/code1.ico",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "/512x512.png",
+			"src": "/code1.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		}
