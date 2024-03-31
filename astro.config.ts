@@ -10,10 +10,9 @@ import icon from "astro-icon";
 import expressiveCode from "astro-expressive-code";
 import { expressiveCodeOptions } from "./src/site.config";
 
-// https://astro.build/config
 export default defineConfig({
-	// ! Please remember to replace the following site property with your own domain
-	site: "https://astro-cactus.chriswilliams.dev/",
+	site: "https://lopez10.github.io",
+	base: "juanLopez",
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
 		rehypePlugins: [
