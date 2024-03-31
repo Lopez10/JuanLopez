@@ -1,6 +1,7 @@
 ---
-import SocialList from "@/components/SocialList.astro";
 import PageLayout from "@/layouts/Base.astro";
+import { Image } from "astro:assets";
+import personal from "@/assets/juan.jpeg";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
@@ -19,6 +20,16 @@ const meta = {
 			developer, although I've always found my true passion in the <strong>backend</strong>.
 		</p>
 
+		<div class="my-8 flex justify-center">
+			<Image
+				class={"rounded-xl w-80"}
+				alt="Juan's personal photo"
+				fetchpriority="high"
+				loading="eager"
+				src={personal}
+			/>
+		</div>
+
 		<p class="mb-4 text-base">
 			As a developer, my main focus is to make sure that every <strong>line of code</strong> I write
 			meets the <strong>highest quality standards</strong>. For me, this means code that is
@@ -31,16 +42,5 @@ const meta = {
 			have also improved my ability to <strong>communicate</strong> and
 			<strong>collaborate</strong> effectively with multidisciplinary teams.
 		</p>
-		<p class="mb-4 text-base">
-			I'm excited to share with you some of the projects I've worked on and the <strong
-				>technologies</strong
-			> I've mastered along the way.
-		</p>
-		<p class="mb-4 text-base">
-			Thanks for visiting my portfolio and I hope to have the <strong
-				>opportunity to collaborate together soon!</strong
-			>
-		</p>
 	</section>
-	<SocialList />
 </PageLayout>
