@@ -2,9 +2,11 @@
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import personal from "@/assets/juan.jpeg";
+import coffee from "@/assets/coffee.jpeg";
 
 const meta = {
-	description: "I'm a starter theme for Astro.build",
+	description:
+		"Juan's personal website. Learn more about Juan and his work as a software engineer.",
 	title: "About",
 };
 ---
@@ -42,5 +44,22 @@ const meta = {
 			have also improved my ability to <strong>communicate</strong> and
 			<strong>collaborate</strong> effectively with multidisciplinary teams.
 		</p>
+		<p class="mb-4 text-base">
+			Outside of the programming world, I enjoy reading books on <strong
+				>software development</strong
+			> , as well as others that focus on <strong>personal development</strong>. I also enjoy the
+			outdoors with activities such as <strong>paddle</strong> and <strong>basketball</strong>, and
+			I can't forget my love for <strong>speciality coffee</strong>! I love to prepare it and try
+			different varieties and brewing methods - nothing like a good cup of coffee to get you coding!
+		</p>
+		<div class="my-8 flex justify-center">
+			<Image
+				class={"rounded-xl w-80"}
+				alt="Juan's personal photo"
+				fetchpriority="high"
+				loading="eager"
+				src={coffee}
+			/>
+		</div>
 	</section>
 </PageLayout>
