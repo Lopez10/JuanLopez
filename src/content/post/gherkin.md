@@ -14,7 +14,9 @@ Gherkin is mainly used in the context of behavior-driven development (BDD), a so
 
 ## How does Gherkin work?
 
-Normalmente se utiliza Gherkin mediante herramientas de terceros, pero nosotros vamos a hacer uso de gherkin mediante la documentación de los test. Hay una serie de palabras clave para hacer uso de gherkin:
+Normally Gherkin is used through third party tools, but we are going to make use of gherkin through test documentation. 
+
+There are a number of keywords to make use of gherkin:
 
 - Feature: Describes a software funcionality.
 - Scenario: Describes a specific test case for a feature.
