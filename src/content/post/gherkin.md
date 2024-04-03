@@ -25,13 +25,15 @@ There are a number of keywords to make use of gherkin:
 - THEN: Describes the expected result of the action. 
 
 ## Example
-```ts title="create-user.spec.ts"
+```ts title="create-restaurant.spec.ts"
 it(`
-    GIVEN
-    WHEN
-    THEN
+    GIVEN an invalid restaurant data
+    WHEN I create a new restaurant with this data 
+    THEN an error message is thrown 
 `, () => {
-
+    // GIVEN
+    // WHEN
+    // THEN
 })
 ```
 
