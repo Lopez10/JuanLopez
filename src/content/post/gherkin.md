@@ -25,6 +25,16 @@ There are a number of keywords to make use of gherkin:
 - THEN: Describes the expected result of the action. 
 
 ## Example
+```ts title="create-user.spec.ts"
+it(`
+    GIVEN
+    WHEN
+    THEN
+`, () => {
+
+})
+```
+
 
 ## Benefits of using Gherkin:
 - **Improves communication**: Gherkin facilitates communication between development and business teams, as both can understand the tests clearly and easily.
