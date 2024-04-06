@@ -32,10 +32,14 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Home",
 		path: "/",
 	},
-	// {
-	// 	title: "Blog",
-	// 	path: "/posts/",
-	// },
+	{
+		title: "About me",
+		path: "/about/",
+	},
+	{
+		title: "Blog",
+		path: "/posts/",
+	},
 	// {
 	// 	title: "Works",
 	// 	path: "/works"
@@ -43,10 +47,6 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 	// {
 	// 	title: "Skills",
 	// 	path: "/skills"
-	// },
-	// {
-	// 	title: "About",
-	// 	path: "/about/",
 	// },
 ];
 
