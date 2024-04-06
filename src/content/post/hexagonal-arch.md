@@ -62,7 +62,14 @@ The domain layer encapsulates the business logic of our restaurant. It defines h
 
 By keeping the domain layer focused and independent, we ensure that our business logic remains clear and maintainable. Changes to the restaurant's processes or requirements can be easily incorporated within this layer without affecting the rest of the system.
 
-Let's take as an example a key entity in the reservation management system: the restaurant. In this entity we define what a restaurant is, including properties such as its name, capacity and, above all, its unique identifier. It is essential that each entity has a unique identifier to facilitate its identification and manipulation within the system. In our article [link to article], we explain in detail the differences between a value object and an entity. Within the entity are also defined the actions that can be performed with it.
+Let's take as an example a key entity in the reservation management system: the restaurant. 
+
+In this entity we define what a restaurant is, including properties such as its name, capacity and, above all, its unique identifier. 
+
+It is essential that each entity has a unique identifier to facilitate its identification and manipulation within the system. 
+
+In our article [link to article], we explain in detail the differences between a value object and an entity. Within the entity are also defined the actions that can be performed with it.
+
 ```ts title="Restaurant.entity.ts"
 export interface RestaurantProps {
     id: Id;
@@ -88,8 +95,6 @@ export class Restaurant {
 }
 ```
 This entity encapsulates the information and behaviour related to a restaurant. It is independent of any specific technology or implementation, which makes it easy to understand and maintain over time.
-
-
 
 At the domain layer, we also define the ports that allow us to interact with the outside world. A common port in many systems is the repository port, which defines how information in the database is accessed and manipulated.
 
@@ -124,9 +129,9 @@ export class RetrieveRestaurantUseCase
 	}
 }
 ```
-The retrieve-restaurant use case involves obtaining detailed information about a specific restaurant. This may include details such as the name of the restaurant, its address, opening hours, menu and any other relevant information.
+The `retrieve-restaurant` **use case** involves obtaining detailed information about a specific restaurant. This may include details such as the name of the restaurant, its address, opening hours, menu and any other relevant information.
 
-When a request for retrieve-restaurant is received, the use case checks the parameters provided, such as the ID of the requested restaurant.
+When a request for `retrieve-restaurant` is received, the use case checks the parameters provided, such as the `ID` of the requested restaurant.
 
 It then communicates with the domain layer to access the relevant domain objects, such as the restaurant repository.
 
@@ -137,7 +142,8 @@ Once the restaurant details are retrieved, the application layer formats them ap
 #### Infrastructure
 The infrastructure layer is the component in charge of handling specific technical and implementation details, such as interaction with databases, external services and other systems. 
 
-To better understand how this layer works, we will explore how the mongo restaurant.postgre.repository.ts repository would be implemented using the prism ORM.
+To better understand how this layer works, we will explore how the mongo `restaurant.postgre.repository.ts` repository would be implemented using the prism ORM.
+
 ```ts title="Restaurant.postgre.repository.ts"
 export class RestaurantPostgresRepository implements RestaurantRepositoryPort {
     private prisma: PrismaClient;
@@ -165,7 +171,7 @@ export class RestaurantPostgresRepository implements RestaurantRepositoryPort {
 
 1. **Database Access:** The infrastructure layer uses Prisma to access the database and retrieve the restaurant information. A query is executed to find a unique restaurant based on the ID provided.
     
-2. **Result Handling:** If no restaurant with the provided ID is found, the function returns null. Otherwise, it maps the found restaurant data to a Restaurant domain object.
+2. **Result Handling:** If no restaurant with the provided `ID` is found, the function returns null. Otherwise, it maps the found restaurant data to a Restaurant domain object.
     
 3. **Result Delivery:** Finally, it returns the found restaurant or null as the result of the function.
 
