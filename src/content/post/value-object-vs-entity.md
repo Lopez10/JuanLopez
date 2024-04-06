@@ -1,8 +1,8 @@
 ---
 title: "Entities and value objects"
-description: "."
+description: ".fdsafdsafdsafdsafasdfsadfadsfdsafdsafdsafasdfasdfdsfdsafdasfdsafdasfdsa"
 publishDate: "28 March 2024"
-tags: ["DDD", "Value object" "Entity"]
+tags: ["DDD", "Value object", "Entity"]
 draft: true
 ---
 
