@@ -26,16 +26,47 @@ There are a number of keywords to make use of gherkin:
 
 ## Example
 ```ts title="create-restaurant.spec.ts"
-it(`
-    GIVEN an invalid restaurant data
-    WHEN I create a new restaurant with this data 
-    THEN an error message is thrown 
-`, () => {
-    // GIVEN
-    // WHEN
-    // THEN
-})
+    it(`
+        GIVEN an invalid restaurant data
+        WHEN I create a new restaurant with this data 
+        THEN an error message is thrown 
+    `, () => {
+        // GIVEN
+        // WHEN
+        // THEN
+    })
 ```
+
+```ts title="dni.value-object.spec.ts"
+    it(`
+        GIVEN a string with 8 numbers
+        AND a letter that does not match
+        WHEN I test if the letter is valid
+        THEN the method returns false
+    `, () => {
+        const isLetterValid = Dni.isLetterValid(12345678, 'X');
+        expect(isLetterValid).toBe(false);
+    });
+```
+
+```ts title="dni.value-object.spec.ts"
+    it(`
+        GIVEN a invalid hour time data
+        WHEN I create a new Time
+        THEN the Time value object is not created
+        AND an error is thrown
+    `, () => {
+        // GIVEN
+        const time = '24:30';
+
+        // WHEN
+        const timeCreation = () => new Time(time);
+
+        // THEN
+        expect(timeCreation).toThrowError('Hour is invalid');
+    });
+```
+
 
 
 ## Benefits of using Gherkin:
