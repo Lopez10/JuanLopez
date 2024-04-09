@@ -37,7 +37,7 @@ There are a number of keywords to make use of gherkin:
     })
 ```
 
-El test `time.value-object.spec.ts` se utiliza para verificar la funcionalidad del objeto de valor Time a la hora de validar valores de hora inválidos. 
+The `time.value-object.spec.ts` test is used to verify the functionality of the Time value object in validating invalid time values. 
 ```ts title="time.value-object.spec.ts"
     it(`
         GIVEN a invalid hour time data
@@ -55,16 +55,19 @@ El test `time.value-object.spec.ts` se utiliza para verificar la funcionalidad d
         expect(timeCreation).toThrowError('Hour is invalid');
     });
 ```
-El test se compone de tres partes:
-1. GIVEN: En esta sección se define la variable time con un valor de hora inválido ("24:30").
+The test consists of three parts:
 
-2. WHEN: Se define una función timeCreation que intenta crear un nuevo objeto Time utilizando la variable time.
+1. **GIVEN:** In this section the value object `time` is defined with an invalid time value ("24:30").
 
-3. THEN: Se utiliza la función toThrowError para verificar que la función timeCreation lance una excepción con el mensaje "Hour is invalid".
+2. **WHEN:** A function `timeCreation` is defined that tries to create a new `Time` object using the variable time.
+
+3. **THEN:** The `toThrowError` function is used to verify that the timeCreation function throws an exception with the message "Hour is invalid".
 
 
 
 ## Benefits of using Gherkin:
 - **Improves communication**: Gherkin facilitates communication between development and business teams, as both can understand the tests clearly and easily.
+
 - **Increases software quality**: Gherkin testing helps detect bugs in the early stages of development, which reduces the time and cost to fix them.
+
 - **Encourages iterative development**: Gherkin tests can be written and executed quickly and easily, which facilitates iterative software development.

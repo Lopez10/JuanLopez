@@ -31,17 +31,17 @@ This rule states that dependencies between system layers should flow from the ou
 It means that internal layers (such as business logic) should not depend on external layers (such as infrastructure).
 
 This promotes greater modularity and facilitates testing and component replacement.
+ 
+2. **Dependency Inversion**
 
-2. **Inversión de Dependencias:**
+Dependency inversion is a key principle in the hexagonal architecture that promotes flexibility and modularity.
 
-La inversión de dependencias es un principio clave en la arquitectura hexagonal que promueve la flexibilidad y la modularidad.
+It refers to the practice of reversing control of dependencies from one component to another external component.
 
-Se refiere a la práctica de invertir el control de las dependencias de un componente hacia otro componente externo.
+This is achieved through the use of interfaces and dependency injection, allowing concrete implementations to be easily interchanged without modifying the source code.
 
-Esto se logra mediante el uso de interfaces y la inyección de dependencias, lo que permite intercambiar fácilmente implementaciones concretas sin modificar el código fuente.
-
-Facilita el diseño de componentes independientes y reutilizables, lo que conduce a un código más limpio, mantenible y escalable.
-
+It facilitates the design of independent and reusable components, leading to cleaner, maintainable and scalable code.
+ 
 3. **Separation of Concerns:**
 
 This principle refers to the practice of dividing a system into components that handle a single responsibility or concern. In the hexagonal architecture, each layer of the system should be dedicated to a specific concern, such as business logic, presentation or data persistence.
