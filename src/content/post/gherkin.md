@@ -37,19 +37,8 @@ There are a number of keywords to make use of gherkin:
     })
 ```
 
-```ts title="dni.value-object.spec.ts"
-    it(`
-        GIVEN a string with 8 numbers
-        AND a letter that does not match
-        WHEN I test if the letter is valid
-        THEN the method returns false
-    `, () => {
-        const isLetterValid = Dni.isLetterValid(12345678, 'X');
-        expect(isLetterValid).toBe(false);
-    });
-```
-
-```ts title="dni.value-object.spec.ts"
+El test `time.value-object.spec.ts` se utiliza para verificar la funcionalidad del objeto de valor Time a la hora de validar valores de hora inválidos. 
+```ts title="time.value-object.spec.ts"
     it(`
         GIVEN a invalid hour time data
         WHEN I create a new Time
@@ -66,6 +55,12 @@ There are a number of keywords to make use of gherkin:
         expect(timeCreation).toThrowError('Hour is invalid');
     });
 ```
+El test se compone de tres partes:
+1. GIVEN: En esta sección se define la variable time con un valor de hora inválido ("24:30").
+
+2. WHEN: Se define una función timeCreation que intenta crear un nuevo objeto Time utilizando la variable time.
+
+3. THEN: Se utiliza la función toThrowError para verificar que la función timeCreation lance una excepción con el mensaje "Hour is invalid".
 
 
 
