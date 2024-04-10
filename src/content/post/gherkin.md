@@ -27,38 +27,40 @@ There are a number of keywords to make use of gherkin:
 **THEN:** Describes the expected result of the action. 
 
 ## Example
-Let's see what a use case implementation would look like using Gherkin in conjunction with Jest, a popular testing framework for TypeScript:
+Let's see how two basic examples would be implemented using Gherkin together with Jest, a popular testing framework for TypeScript:
 
+#### Use case test
+In our example, we are faced with the task of making sure that the use case for creating a restaurant in our application works properly.
 ```ts title="create-restaurant.spec.ts"
-    it(`
-        GIVEN a restaurant data
-        WHEN I call to the use case to create a restaurant
-        THEN the restaurant should be created with the correct data
-    `, () => {
-        const restaurantReposistory: RestaurantRepositoryPort =
-            new RestaurantMockRepository();
-        const action = new CreateRestaurantUseCase(restaurantReposistory);
+it(`
+    GIVEN a restaurant data
+    WHEN I call to the use case to create a restaurant
+    THEN the restaurant should be created with the correct data
+`, () => {
+    const restaurantReposistory: RestaurantRepositoryPort =
+        new RestaurantMockRepository();
+    const action = new CreateRestaurantUseCase(restaurantReposistory);
 
-        // GIVEN
-        const restaurantRequestData: CreateRestaurantDto = {
-            name: "Restaurant 1",
-            description: "Restaurant 1 description",
-            email: "restaurant1@gmail.com",
-            capacity: 10,
-        };
+    // GIVEN
+    const restaurantRequestData: CreateRestaurantDto = {
+        name: "Restaurant 1",
+        description: "Restaurant 1 description",
+        email: "restaurant1@gmail.com",
+        capacity: 10,
+    };
 
-        // WHEN
-        const restaurantCreated = await action.run(restaurantRequestData);
+    // WHEN
+    const restaurantCreated = await action.run(restaurantRequestData);
 
-        // THEN
-        expect(restaurantCreated.propsCopy.name.value).toEqual("Restaurant 1");
-        expect(restaurantCreated.propsCopy.description.value).toEqual(
-            "Restaurant 1 description",
-        );
-        expect(restaurantCreated.propsCopy.email.value).toEqual(
-            "restaurant1@gmail.com",
-        );
-    })
+    // THEN
+    expect(restaurantCreated.propsCopy.name.value).toEqual("Restaurant 1");
+    expect(restaurantCreated.propsCopy.description.value).toEqual(
+        "Restaurant 1 description",
+    );
+    expect(restaurantCreated.propsCopy.email.value).toEqual(
+        "restaurant1@gmail.com",
+    );
+})
 ```
 
 The example presented here illustrates how to write clear and concise test cases that describe the expected behaviour of an application. Let us look at each part of the use case in more detail:
@@ -69,23 +71,24 @@ The example presented here illustrates how to write clear and concise test cases
 
 **THEN:** This part defines the expectations of the result of the action. It checks that the restaurant created has the correct data as specified in the "Given" section. It is expected that the name, description and email of the created restaurant match the data initially provided.
 
+#### Value object test
 The `time.value-object.spec.ts` test is used to verify the functionality of the Time value object in validating invalid time values. 
 ```ts title="time.value-object.spec.ts"
-    it(`
-        GIVEN a invalid hour time data
-        WHEN I create a new Time
-        THEN the Time value object is not created
-        AND an error is thrown
-    `, () => {
-        // GIVEN
-        const time = '24:30';
+it(`
+    GIVEN a invalid hour time data
+    WHEN I create a new Time
+    THEN the Time value object is not created
+    AND an error is thrown
+`, () => {
+    // GIVEN
+    const time = '24:30';
 
-        // WHEN
-        const timeCreation = () => new Time(time);
+    // WHEN
+    const timeCreation = () => new Time(time);
 
-        // THEN
-        expect(timeCreation).toThrowError('Hour is invalid');
-    });
+    // THEN
+    expect(timeCreation).toThrowError('Hour is invalid');
+});
 ```
 The test consists of three parts:
 
