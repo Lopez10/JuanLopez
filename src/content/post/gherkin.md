@@ -3,7 +3,7 @@ title: "Gherkin"
 description: "Helps to clearly define scenarios and test cases, facilitating communication in agile development and BDD teams."
 publishDate: "28 March 2024"
 tags: ["test"]
-draft: true
+draft: false
 ---
 
 Gherkin is a Domain Specific Language (DSL) used to write acceptance tests and behavioral specifications for software. It is a simple and easy-to-read language for both developers and non-developers, making it an ideal tool for communication between development and business teams.
