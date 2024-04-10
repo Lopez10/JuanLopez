@@ -20,9 +20,11 @@ There are a number of keywords to make use of gherkin:
 
 <!-- - Feature: Describes a software funcionality.
 - Scenario: Describes a specific test case for a feature. -->
-- GIVEN: Describe the initial context of the scenario.
-- WHEN: Describes the action that is performed in the scenario.
-- THEN: Describes the expected result of the action. 
+**GIVEN:** Describe the initial context of the scenario.
+
+**WHEN:** Describes the action that is performed in the scenario.
+
+**THEN:** Describes the expected result of the action. 
 
 ## Example
 Let's see what a use case implementation would look like using Gherkin in conjunction with Jest, a popular testing framework for TypeScript:
@@ -87,17 +89,17 @@ The `time.value-object.spec.ts` test is used to verify the functionality of the 
 ```
 The test consists of three parts:
 
-1. **GIVEN:** In this section the value object `time` is defined with an invalid time value ("24:30").
+**GIVEN:** In this section the value object `time` is defined with an invalid time value ("24:30").
 
-2. **WHEN:** A function `timeCreation` is defined that tries to create a new `Time` object using the variable time.
+**WHEN:** A function `timeCreation` is defined that tries to create a new `Time` object using the variable time.
 
-3. **THEN:** The `toThrowError` function is used to verify that the timeCreation function throws an exception with the message "Hour is invalid".
+**THEN:** The `toThrowError` function is used to verify that the timeCreation function throws an exception with the message "Hour is invalid".
 
 
 
 ## Benefits of using Gherkin:
-- **Improves communication**: Gherkin facilitates communication between development and business teams, as both can understand the tests clearly and easily.
+**Improves communication**: Gherkin facilitates communication between development and business teams, as both can understand the tests clearly and easily.
 
-- **Increases software quality**: Gherkin testing helps detect bugs in the early stages of development, which reduces the time and cost to fix them.
+**Increases software quality**: Gherkin testing helps detect bugs in the early stages of development, which reduces the time and cost to fix them.
 
-- **Encourages iterative development**: Gherkin tests can be written and executed quickly and easily, which facilitates iterative software development.
+**Encourages iterative development**: Gherkin tests can be written and executed quickly and easily, which facilitates iterative software development.
