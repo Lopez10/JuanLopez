@@ -1,9 +1,9 @@
 ---
-title: "Domain Driven Design"
+title: "Introduction to Domain Driven Design"
 description: "It promotes communication between technical and domain experts to create clear and effective domain models."
-publishDate: "28 March 2024"
+publishDate: "11 April 2024"
 tags: ["DDD"]
-draft: true
+draft: false
 ---
 
 ## Introduction
@@ -123,7 +123,7 @@ export class Area extends AggregateRoot<AreaProps> {
 
 Understanding the Code:
 
-**AreaProps Interface:** Defines the properties that an area must have, including name, capacity, operating hours, and its relationship to a specific restaurant.
+**AreaProps:** Defines the properties that an area must have, including name, capacity, operating hours, and its relationship to a specific restaurant.
 
 **Aggregate Root (Area Class):** Represents the concept of an area within a restaurant. It extends a base class AggregateRoot, which provides it with a unique identity and the capability to enforce business rules across the aggregate's boundaries.
 

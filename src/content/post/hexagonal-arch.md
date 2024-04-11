@@ -54,7 +54,7 @@ This principle states that a class or module should have only one reason to chan
 
 This principle promotes the use of abstractions, such as interfaces, rather than concrete implementations in system design. Abstractions facilitate component exchange and unit testing by decoupling system components.
 
-## Example
+## Practical Examples of Hexagonal Architecture in Action
 Imagine we are building a system to manage restaurant reservations. Let's explore how we could design this system using the hexagonal architecture, layer by layer:
 
 #### Domain

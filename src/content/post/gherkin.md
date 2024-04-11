@@ -26,7 +26,7 @@ There are a number of keywords to make use of gherkin:
 
 **THEN:** Describes the expected result of the action. 
 
-## Example
+## Practical Examples of Gherkin in Action
 Let's see how two basic examples would be implemented using Gherkin together with Jest, a popular testing framework for TypeScript:
 
 #### Use case test
