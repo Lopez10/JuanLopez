@@ -178,7 +178,7 @@ export class RestaurantPostgresRepository implements RestaurantRepositoryPort {
 #### Presentation
 In the hexagonal architecture, the presentation layer plays a key role in providing an interface for users to interact with the system through different channels, such as REST APIs, web pages or user interfaces.
 
-En el siguiente ejemplo, se muestra cómo se podría implementar un controlador en la capa de presentación utilizando TypeScript y NestJS para gestionar las operaciones relacionadas con los restaurantes:
+The following example shows how a controller could be implemented at the presentation layer using TypeScript and NestJS to manage restaurant-related operations:
 ```ts title="Restaurant.controller.ts"
 @ApiTags('restaurant')
 @Controller('restaurant')
