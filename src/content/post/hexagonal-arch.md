@@ -6,6 +6,7 @@ tags: ["architecture"]
 draft: false
 ---
 
+## Introduction
 In the realm of software development, the rapid pace of technological change can be overwhelming. Frameworks come and go, but business logic remains. Hexagonal architecture offers a solution by allowing us to abstract from the technological chaos. By separating the core logic of our application from the implementation details, we can easily adapt to new frameworks and technologies without rewriting everything from scratch. In this article, we'll explore how hexagonal architecture promotes technological abstraction and why you should care.
 
 Imagine you are building a house. You want it to be solid, easy to maintain, and you want to be able to change the windows or the front door without having to rebuild everything from scratch. Well, that's basically what hexagonal architecture does for your software.
