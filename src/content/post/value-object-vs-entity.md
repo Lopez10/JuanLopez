@@ -1,6 +1,6 @@
 ---
-title: "Entities and value objects"
-description: ".fdsafdsafdsafdsafasdfsadfadsfdsafdsafdsafasdfasdfdsfdsafdasfdsafdasfdsa"
+title: "Entities and value objects: Pillars of Domain-Driven Design"
+description: "In this post, we detail how to distinguish between entities and value objects in DDD, and explain why this distinction is crucial for designing clearer and more maintainable software."
 publishDate: "28 March 2024"
 tags: ["DDD", "Value object", "Entity"]
 draft: true
